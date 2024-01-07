@@ -2,6 +2,7 @@ import npmRun from "rollup-plugin-npm-run";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
+import typescript from "@rollup/plugin-typescript";
 
 const production = process.env.NODE_ENV === "production";
 const watch = process.env.ROLLUP_WATCH;
@@ -14,6 +15,7 @@ const plugins = [
 	resolve({
 		browser: true,
 	}),
+	typescript(),
 ];
 
 const outputs = ["cjs", "es", "umd"];
