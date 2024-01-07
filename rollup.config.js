@@ -1,8 +1,8 @@
-import npmRun from 'rollup-plugin-npm-run'
-import resolve from '@rollup/plugin-node-resolve'
-import svelte from 'rollup-plugin-svelte'
+import npmRun from "rollup-plugin-npm-run";
+import resolve from "@rollup/plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
 
-const watch = process.env.ROLLUP_WATCH
+const watch = process.env.ROLLUP_WATCH;
 
 const plugins = [
 	svelte({
@@ -11,36 +11,30 @@ const plugins = [
 	resolve({
 		browser: true,
 	}),
-]
+];
 
-const outputs = [
-	'cjs',
-	'es',
-	'umd',
-]
+const outputs = ["cjs", "es", "umd"];
 
 const outputExtras = {
 	cjs: {
-		exports: 'default',
+		exports: "default",
 	},
 	umd: {
-		name: 'ProgressBar',
+		name: "ProgressBar",
 	},
-}
+};
 
 export default [
 	{
-		input: 'docs/app.js',
+		input: "docs/app.js",
 		output: {
-			file: 'docs/build.js',
-			format: 'iife',
+			file: "docs/build.js",
+			format: "iife",
 		},
-		plugins: watch
-			? [ ...plugins, npmRun('start') ]
-			: plugins,
+		plugins: watch ? [...plugins, npmRun("start")] : plugins,
 	},
-	...outputs.map(format => ({
-		input: 'src/ProgressBar.svelte',
+	...outputs.map((format) => ({
+		input: "src/ProgressBar.svelte",
 		output: {
 			file: `dist/ProgressBar.${format}.js`,
 			format,
@@ -48,4 +42,4 @@ export default [
 		},
 		plugins,
 	})),
-]
+];

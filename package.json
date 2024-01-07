@@ -5,6 +5,11 @@
   "main": "dist/ProgressBar.cjs.js",
   "module": "dist/ProgressBar.es.js",
   "svelte": "src/ProgressBar.svelte",
+  "exports": {
+    ".": {
+      "svelte": "./src/ProgressBar.svelte"
+    }
+  },
   "umd": "dist/ProgressBar.umd.js",
   "files": [
     "src",
