@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
 
+const production = process.env.NODE_ENV === "production";
 const watch = process.env.ROLLUP_WATCH;
 
 const plugins = [

@@ -1,9 +1,10 @@
 {
   "name": "svelte-progress-bar",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A tiny progress bar, inspired by YouTube's loader!",
   "main": "dist/ProgressBar.cjs.js",
   "module": "dist/ProgressBar.es.js",
+  "types": "src/ProgressBar.svelte.d.ts",
   "svelte": "src/ProgressBar.svelte",
   "exports": {
     ".": {
