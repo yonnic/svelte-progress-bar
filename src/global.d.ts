@@ -1,8 +1,7 @@
-// ProgressBar.svelte.d.ts
 declare module "svelte-progress-bar" {
 	import type { SvelteComponentTyped } from "svelte";
 
-	export interface ProgressBarProps {
+	export default class ProgressBar extends SvelteComponentTyped<{
 		color?: string;
 		width?: number;
 		minimum?: number;
@@ -12,31 +11,17 @@ declare module "svelte-progress-bar" {
 		stepSizes?: number[];
 		barStyle?: string;
 		leaderColorStyle?: string;
-	}
-
-	export interface ProgressBarEvents {
-		// Define custom events here, if any
-		// Example: on:complete: CustomEvent<null>;
-	}
-
-	export interface ProgressBarSlots {
-		// Define slots here, if any
-		// Example: default: {};
-	}
-
-	export default class ProgressBar extends SvelteComponentTyped<
-		ProgressBarProps,
-		ProgressBarEvents,
-		ProgressBarSlots
-	> {
-		// You can define additional methods or properties if needed
-		reset: () => void;
-		animate: () => void;
-		start: () => void;
-		stop: () => void;
-		complete: () => void;
-		setWidthRatio: (widthRatio: number) => void;
-		getState: () => {
+		// Other props as you need it
+	}> {
+		public start(): void;
+		public complete(): void;
+		public reset: () => void;
+		public animate: () => void;
+		public start: () => void;
+		public stop: () => void;
+		public complete: () => void;
+		public setWidthRatio: (widthRatio: number) => void;
+		public getState: () => {
 			width: number;
 			running: boolean;
 			completed: boolean;
@@ -47,5 +32,6 @@ declare module "svelte-progress-bar" {
 			intervalTime: number;
 			stepSizes: number[];
 		};
+		// Other funcs as you need it
 	}
 }
