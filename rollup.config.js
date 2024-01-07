@@ -1,12 +1,14 @@
 import npmRun from "rollup-plugin-npm-run";
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
+import sveltePreprocess from "svelte-preprocess";
 
 const watch = process.env.ROLLUP_WATCH;
 
 const plugins = [
 	svelte({
 		emitCss: false,
+		preprocess: sveltePreprocess({ sourceMap: !production }),
 	}),
 	resolve({
 		browser: true,
