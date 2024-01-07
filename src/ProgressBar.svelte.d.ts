@@ -1,5 +1,5 @@
 // ProgressBar.svelte.d.ts
-/// <reference types="svelte" />
+import type { SvelteComponentTyped } from "svelte";
 
 export interface ProgressBarProps {
 	color?: string;
@@ -13,11 +13,22 @@ export interface ProgressBarProps {
 	leaderColorStyle?: string;
 }
 
-export default class ProgressBar {
-	$$prop_def: ProgressBarProps;
-	$$slot_def: {};
+export interface ProgressBarEvents {
+	// Define custom events here, if any
+	// Example: on:complete: CustomEvent<null>;
+}
 
-	// Methods
+export interface ProgressBarSlots {
+	// Define slots here, if any
+	// Example: default: {};
+}
+
+export default class ProgressBar extends SvelteComponentTyped<
+	ProgressBarProps,
+	ProgressBarEvents,
+	ProgressBarSlots
+> {
+	// You can define additional methods or properties if needed
 	reset: () => void;
 	animate: () => void;
 	start: () => void;
