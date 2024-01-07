@@ -4,11 +4,11 @@
   "description": "A tiny progress bar, inspired by YouTube's loader!",
   "main": "dist/ProgressBar.cjs.js",
   "module": "dist/ProgressBar.es.js",
-  "types": "src/global.d.ts",
   "svelte": "src/ProgressBar.svelte",
   "exports": {
     ".": {
-      "svelte": "./src/ProgressBar.svelte"
+      "svelte": "./src/ProgressBar.svelte",
+      "types": "./src/global.d.ts"
     }
   },
   "umd": "dist/ProgressBar.umd.js",
